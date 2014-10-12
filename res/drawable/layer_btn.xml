@@ -1,0 +1,9 @@
+<layer-list
+xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+   <item android:drawable="@drawable/btn_bg_shadow"/>
+   <item
+     android:drawable="@drawable/btn_bg"
+     android:bottom="4px" />  
+ 
+</layer-list>
