@@ -9,9 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import app.rama.lib.SessionHandler;
 
 
@@ -75,16 +74,10 @@ public class MainActivity extends Activity {
   		//Animasi untuk Frame Layout mengunakan alpha.xml
   		Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
           anim.reset();
-          FrameLayout l=(FrameLayout) findViewById(R.id.FrameLayout1);
+          RelativeLayout l=(RelativeLayout) findViewById(R.id.relative1);
           l.clearAnimation();
           l.startAnimation(anim);
           
-        //Animasi untuk ProgressBar1 mengunakan alpha.xml
-          Animation anim1 = AnimationUtils.loadAnimation(this, R.anim.alpha);
-          anim1.reset();
-          ProgressBar l1=(ProgressBar) findViewById(R.id.progressBar1);
-          l1.clearAnimation();
-          l1.startAnimation(anim);
           
         //Animasi untuk Gambar mengunakan Translate.xml
           anim = AnimationUtils.loadAnimation(this, R.anim.translate);
@@ -95,7 +88,6 @@ public class MainActivity extends Activity {
           
         //Animasi untuk ProgressBar1 mengunakan alpha.xml
           Animation anim2 = AnimationUtils.loadAnimation(this, R.anim.translate_left);
-          anim1.reset();
           ImageView iv2 = (ImageView) findViewById(R.id.imageView1);
           iv2.clearAnimation();
           iv2.startAnimation(anim2);

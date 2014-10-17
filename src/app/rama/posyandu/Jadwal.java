@@ -2,10 +2,7 @@ package app.rama.posyandu;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.ActionBar;
-import android.content.ContentValues;
 import android.os.Bundle;
-import android.provider.CalendarContract;
-import android.provider.CalendarContract.Calendars;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -51,20 +48,5 @@ public class Jadwal extends ActionBarActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	private static ContentValues buildNewCalContentValues() {
-		final ContentValues cv = new ContentValues();
-		cv.put(Calendars.ACCOUNT_NAME, "RAMA");
-		cv.put(Calendars.ACCOUNT_TYPE, CalendarContract.ACCOUNT_TYPE_LOCAL);
-		cv.put(Calendars.NAME, "COBAAA");
-		cv.put(Calendars.CALENDAR_DISPLAY_NAME, "COBAAA");
-		cv.put(Calendars.CALENDAR_COLOR, 0xEA8561);
-		// user can only read the calendar
-		cv.put(Calendars.CALENDAR_ACCESS_LEVEL, Calendars.CAL_ACCESS_READ);
-		cv.put(Calendars.OWNER_ACCOUNT, "RAMA");
-		cv.put(Calendars.VISIBLE, 1);
-		cv.put(Calendars.SYNC_EVENTS, 1);
-		return cv;
 	}
 }

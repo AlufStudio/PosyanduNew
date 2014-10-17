@@ -1,14 +1,9 @@
 	package app.rama.posyandu;
 
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 import org.joda.time.DateTime;
 import org.joda.time.Months;
 
 import android.app.Activity;
-import android.content.PeriodicSync;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -101,7 +96,13 @@ public class KMS extends Activity {
 					status = "Status gizi buah hati anda adalah : Gizi Lebih";
 				}
 				
-				hasil.setText(status);
+				if(textBerat.getText().toString().equals("")){
+					Toast.makeText(getBaseContext(),"Berat Badan Belum Diisi",Toast.LENGTH_SHORT).show();
+					
+				}else{
+					hasil.setText(status);
+				}
+				
 			}
 		});
 		

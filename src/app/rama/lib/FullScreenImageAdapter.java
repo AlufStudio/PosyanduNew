@@ -50,7 +50,7 @@ public class FullScreenImageAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView imgDisplay;
-        Button btnClose;
+        Button btnMulai;
         TextView textSlide;
   
         inflater = (LayoutInflater) _activity
@@ -58,23 +58,24 @@ public class FullScreenImageAdapter extends PagerAdapter {
         View viewLayout = inflater.inflate(R.layout.layout_welcome, container,
                 false);
   
-        imgDisplay = (ImageView)viewLayout.findViewById(R.id.imgNya);
         textSlide = (TextView)viewLayout.findViewById(R.id.textSlide);
-        btnClose = (Button)viewLayout.findViewById(R.id.btnClose);
+        btnMulai = (Button)viewLayout.findViewById(R.id.btnClose);
+        imgDisplay = (ImageView)viewLayout.findViewById(R.id.imgNya);
+        
         
         if(position < 3) {
+        	textSlide.setText(_textnya[position]);
 	        imgDisplay.setImageResource(_imageNya[position]);
-	        textSlide.setText(_textnya[position]);
         }
          
         
         if(position == 3){
         	imgDisplay.setVisibility(View.INVISIBLE);
         	textSlide.setVisibility(View.INVISIBLE);
-        	btnClose.setVisibility(View.VISIBLE);
+        	btnMulai.setVisibility(View.VISIBLE);
         	
         	// close button click event
-            btnClose.setOnClickListener(new View.OnClickListener() {            
+            btnMulai.setOnClickListener(new View.OnClickListener() {            
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(_activity,Daftar.class);

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="325dp"
+        android:layout_height="match_parent"
         android:background="@drawable/bg_bti"
         android:orientation="vertical"
         android:padding="10dp" >
@@ -45,7 +45,7 @@
             android:layout_height="40dp"
             android:background="@drawable/et_style_1"
             android:ems="10"
-            android:hint="kg"
+            android:hint="@string/text_berat"
             android:inputType="number"
             android:textColor="@color/black" >
 
@@ -65,7 +65,7 @@
             android:layout_height="40dp"
             android:background="@drawable/et_style_1"
             android:ems="10"
-            android:hint="cm"
+            android:hint="@string/text_panjang"
             android:inputType="number"
             android:textColor="@color/black" >
         </EditText>
@@ -78,6 +78,7 @@
         android:background="#F6F6F6"
         android:gravity="center"
         android:orientation="vertical"
+        android:layout_above="@+id/footer"
         android:padding="20dp" >
 
         <Button
@@ -102,10 +103,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#2791D0"
+        android:id="@+id/footer"
         android:orientation="horizontal"
         android:gravity="center|center_vertical"
+        android:layout_alignParentBottom="true"
         android:padding="10dp"
          >
 
@@ -134,4 +137,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

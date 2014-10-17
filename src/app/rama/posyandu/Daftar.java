@@ -5,8 +5,7 @@ import java.util.Calendar;
 import org.joda.time.DateTime;
 import org.joda.time.Months;
 
-import com.mikhaellopez.circularimageview.CircularImageView;
-
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -27,6 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import app.rama.lib.DatabaseHandler;
@@ -37,11 +37,11 @@ import app.rama.modal.UserClass;
 public class Daftar extends Activity {
 	private EditText txtNamaAnak, txtNamaOrtu, txtTglLahir;
 	private Spinner txtJK;
-	private Button btn1;
+	private Button btn1,btn2;
 	private DatabaseHandler dh;
 	private SessionHandler sh;
 	private ProgressDialog pDialog;
-	private CircularImageView potoPropil;
+	private ImageView potoPropil;
 	private int year, month, day;
 	private String picturePath;
 
@@ -51,14 +51,18 @@ public class Daftar extends Activity {
 		setContentView(R.layout.activity_daftar);
 		dh = new DatabaseHandler(this);
 		sh = new SessionHandler(getApplicationContext());
+		
+		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		getActionBar().setCustomView(R.layout.navbar_daftar);
 
-		txtNamaAnak = (EditText) findViewById(R.id.txtNamaLengkap);
-		txtTglLahir = (EditText) findViewById(R.id.txtTanggalLahir);
+		txtNamaAnak = (EditText) findViewById(R.id.txtNamaAnak);
+		txtTglLahir = (EditText) findViewById(R.id.txtTglLahir);
 		txtJK = (Spinner) findViewById(R.id.spinJK);
 		txtNamaOrtu = (EditText) findViewById(R.id.txtNamaOrtu);
 
-		btn1 = (Button) findViewById(R.id.btnSubmit);
-		potoPropil = (CircularImageView) findViewById(R.id.potoPropil);
+		btn1 = (Button) findViewById(R.id.btnDaftar);
+		btn2 = (Button)findViewById(R.id.btnGantiFoto);
+		potoPropil = (ImageView) findViewById(R.id.imgPhoto);
 
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.JK_arrray, android.R.layout.simple_spinner_item);
@@ -83,14 +87,14 @@ public class Daftar extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				if(txtNamaAnak.getText().toString().equalsIgnoreCase("") && txtNamaOrtu.getText().toString().equalsIgnoreCase("") && txtTglLahir.getText().toString().equalsIgnoreCase("") && txtJK.getSelectedItem().toString().equalsIgnoreCase("")){
+				if(txtNamaAnak.getText().toString().isEmpty() || txtNamaOrtu.getText().toString().isEmpty() || txtTglLahir.getText().toString().isEmpty()){
 					Toast.makeText(getApplicationContext(), "Form harus terisi dengan benar", Toast.LENGTH_SHORT).show();
 				} else 
 					new daftarIN().execute();
 			}
 		});
 
-		potoPropil.setOnClickListener(new View.OnClickListener() {
+		btn2.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -593,6 +597,14 @@ public class Daftar extends Activity {
 			dh.addDetailUser(new UserClass(txtNamaAnak.getText().toString(),
 					txtTglLahir.getText().toString(), txtNamaOrtu.getText()
 							.toString(), txtJK.getSelectedItem().toString(),picturePath));
+			
+			Log.i("INFO", txtNamaAnak.getText().toString());
+			Log.i("INFO", txtTglLahir.getText().toString());
+			Log.i("INFO", txtNamaOrtu.getText().toString());
+			Log.i("INFO", txtJK.getSelectedItem().toString());
+			Log.i("INFO", picturePath);
+			
+			
 
 			// Session
 			sh.createRegisSession("asdhajhfa309182391jkahskjayr941");
@@ -608,7 +620,6 @@ public class Daftar extends Activity {
 
 			Months d = Months.monthsBetween(x, new DateTime());
 			int monthsDiff = d.getMonths();
-			Log.e("COBA", String.valueOf(monthsDiff));
 			fillJadwal(monthsDiff);
 
 			return null;

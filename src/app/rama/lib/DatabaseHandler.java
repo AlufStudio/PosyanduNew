@@ -183,6 +183,13 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         db.close();
     }
 	
+	public void resetDetailWOA(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        // Delete All Rows
+        db.delete(TBL_WOA, null, null);
+        db.close();
+    }
+	
 	 public UserClass getUser(int id)
 	  {
 	    SQLiteDatabase db = this.getReadableDatabase();
@@ -229,45 +236,4 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 		    // return contact list
 		    return jadwalList;
 		}
-	
-	/**
-	public UserClass getUser() {
-	    SQLiteDatabase db = this.getReadableDatabase();
-	    int limit = 1;
-	    Cursor cursor = db.rawQuery("SELECT * FROM " + TBL_USER + " ORDER BY " + KEY_ID + " DESC LIMIT 0,?",new String[]{String.valueOf(limit)});
-	    if (cursor != null)
-	        cursor.moveToFirst();
-	    
-	    UserClass user = new UserClass();
-	    user.setID(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
-	    user.setNama(cursor.getString(cursor.getColumnIndex(KEY_NAMA)));
-	    user.setNamaortu(cursor.getString(cursor.getColumnIndex(KEY_ORTU)));
-	    user.setTgl(cursor.getString(cursor.getColumnIndex(KEY_TGL)));
-	    
-	    // return user
-	    return user;
-	}
-	
-	 public ArrayList<QuestClass> getAllQuest() {
-		    ArrayList<QuestClass> questList = new ArrayList<QuestClass>();
-		    // Select All Query
-		    String selectQuery = "SELECT  * FROM " + TBL_QUEST;
-		 
-		    SQLiteDatabase db = this.getWritableDatabase();
-		    Cursor cursor = db.rawQuery(selectQuery, null);
-		 
-		    // looping through all rows and adding to list
-		    if (cursor.moveToFirst()) {
-		        do {
-		            QuestClass qc = new QuestClass();
-		            qc.setNameQuest(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
-		            // Adding contact to list
-		            questList.add(qc);
-		        } while (cursor.moveToNext());
-		    }
-		 
-		    // return contact list
-		    return questList;
-		}
-	**/
 }

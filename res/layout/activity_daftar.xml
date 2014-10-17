@@ -1,125 +1,100 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res/app.rama.posyandu"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f6f6f6"
-    tools:context="app.rama.posyandu.Daftar" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingRight="50dp"
+    android:paddingLeft="50dp"
+    android:background="#f6f6f6" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
+    <ImageView
+        android:id="@+id/imgPhoto"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:contentDescription="@string/img_photo_upload"
         android:layout_alignParentTop="true"
-        android:background="@drawable/bg_profile"
-        android:gravity="top|center|bottom"
-        android:orientation="vertical"
-        android:padding="5dp" >
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_garisgaris"
+        android:layout_marginTop="25dp" />
 
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/potoPropil"
-            android:layout_width="67dp"
-            android:layout_height="67dp"
-            android:src="@drawable/photo"
-            app:border="true"
-            app:border_color="#eeeeee"
-            app:border_width="2dp"
-            app:shadow="true" />
+    <Button
+        android:id="@+id/btnGantiFoto"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:layout_below="@+id/imgPhoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layer_btn_gantifoto"
+        android:text="@string/btn_ganti_foto"
+        android:textColor="#FFFFFF" />
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Klik foto untuk mengganti dengan foto anda"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <EditText
+        android:id="@+id/txtNamaAnak"
+        android:drawableLeft="@drawable/icon_user"
+        android:drawablePadding="10dp"
+        android:paddingRight="10dp"
+        android:textSize="14sp"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout1"
-        android:background="#2791d0"
-        android:orientation="vertical" >
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnGantiFoto"
         android:layout_marginTop="15dp"
-        android:text="ISI DATA DIRI ANAK"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:background="@drawable/bg_form"
+        android:hint="@string/hint_nama_anak">
+        
+        <requestFocus /> 
+        
+     </EditText>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/txtTglLahir"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:text="Isikan data diri anak dengan benar" />
+        android:drawableLeft="@drawable/icon_tgl"
+        android:paddingRight="10dp"
+        android:textSize="14sp"
+        android:drawablePadding="10dp"
+        android:layout_alignLeft="@+id/txtNamaAnak"
+        android:layout_below="@+id/txtNamaAnak"
+        android:layout_marginTop="5dp"
+        android:hint="@string/hint_tgl_lahir" 
+        android:background="@drawable/bg_form" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/spinJK"
+        android:layout_width="match_parent"
+        android:paddingRight="10dp"
+        android:textSize="14sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical" >
+        android:layout_alignLeft="@+id/txtTglLahir"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="35dp"
+        android:layout_below="@+id/txtTglLahir"
+        android:background="@drawable/bg_form_jk" />
 
-        <EditText
-            android:id="@+id/txtNamaLengkap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/icon_user"
-            android:drawablePadding="7dip"
-            android:ems="10"
-            android:hint="Nama Lengkap"
-            android:textColorHint="#a5a5a5" />
+    <EditText
+        android:id="@+id/txtNamaOrtu"
+        android:layout_width="match_parent"
+        android:drawableLeft="@drawable/icon_ortu"
+        android:drawablePadding="10dp"
+        android:paddingRight="10dp"
+        android:textSize="14sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinJK"
+        android:layout_below="@+id/spinJK"
+        android:layout_marginTop="5dp"
+        android:hint="@string/hint_nama_ortu"
+        android:background="@drawable/bg_form" />
 
-        <EditText
-            android:id="@+id/txtTanggalLahir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:drawableLeft="@drawable/icon_tgl"
-            android:drawablePadding="7dip"
-            android:ems="10"
-            android:focusable="false"
-            android:hint="Tanggal Lahir" >
-
-            <requestFocus />
-        </EditText>
-
-        <Spinner
-            android:id="@+id/spinJK"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_marginTop="5dp" />
-
-        <EditText
-            android:id="@+id/txtNamaOrtu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:drawableLeft="@drawable/icon_ortu"
-            android:drawablePadding="7dip"
-            android:ems="10"
-            android:hint="Nama Orangtua" />
-
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/layer_btn"
-            android:text="SIMPAN"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnDaftar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtNamaOrtu"
+        android:layout_below="@+id/txtNamaOrtu"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/layer_btn_daftar"
+        android:gravity="center"
+        android:text="@string/btn_daftar"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

@@ -1,145 +1,147 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/app.rama.posyandu"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="app.rama.posyandu.Dashboard" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f6f6f6" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/image_menu_atas"
-        android:orientation="vertical" >
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#2791d0"
-        android:paddingLeft="27dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:gravity="center_vertical" >
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="@string/title_dashboard"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/potoPropils"
-                android:layout_width="67dp"
-                android:layout_height="67dp"
-                android:src="@drawable/photo"
-                app:border="true"
-                app:border_color="#eeeeee"
-                app:border_width="1dp"
-                app:shadow="true" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_vertical" >
-
-            <TextView
-                android:id="@+id/txtNama"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Medium Text"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/txtSubNama"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:textSize="10sp"
+        android:text="@string/title_sub_dashboard" />
 
-        <TextView
-            android:id="@+id/textView3"
+    <RelativeLayout
+        android:id="@+id/layoutMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" >
+
+        <ImageButton
+            android:id="@+id/btnTips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MENU"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_tips" />
 
-        <TextView
-            android:id="@+id/textView4"
+        <ImageButton
+            android:id="@+id/btnKalkulator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pelayanan, Tips, Info, Kegiatan yang ada pada Posyandu"
-            android:textSize="11sp" />
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/btnTips"
+            android:background="@drawable/icon_kalkulator" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/btnJadwal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center" >
+            android:layout_below="@+id/btnTips"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_jadwal" />
 
-            <ImageButton
-                android:id="@+id/btnTips"
-                android:layout_width="119dp"
-                android:layout_height="109dp"
-                android:src="@drawable/btn_tips" />
-
-            <ImageButton
-                android:id="@+id/btnKalkulator"
-                android:layout_width="119dp"
-                android:layout_height="109dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/btn_kalkulator" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/btnKMS"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center" >
+            android:layout_below="@+id/btnKalkulator"
+            android:layout_toRightOf="@+id/btnJadwal"
+            android:background="@drawable/icon_kms" />
+    </RelativeLayout>
 
-            <ImageButton
-                android:id="@+id/btnJadwal"
-                android:layout_width="119dp"
-                android:layout_height="109dp"
-                android:src="@drawable/btn_jadwal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutMenu"
+        android:layout_marginTop="15dp"
+        android:gravity="center" >
 
-            <ImageButton
-                android:id="@+id/btnKMS"
-                android:layout_width="119dp"
-                android:layout_height="109dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/btn_kms" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/btnBantuan"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center" >
+            android:background="@drawable/btn_bantuan" />
 
-            <ImageButton
-                android:id="@+id/btnBantuan"
-                android:layout_width="94dp"
-                android:layout_height="48dp"
-                android:src="@drawable/btn_bantuan" />
-
-            <ImageButton
-                android:id="@+id/btnAbout"
-                android:layout_width="94dp"
-                android:layout_height="48dp"
-                android:src="@drawable/btn_about" />
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/btnAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_about" />
     </LinearLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#2791d0"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp" >
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/potoPropils"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:border="true"
+            app:border_color="#eeeeee"
+            app:border_width="1dp"
+            app:shadow="true" />
+
+        <TextView
+            android:id="@+id/txtNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/potoPropils"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="Subianto"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@drawable/layer_btn_daftar"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="5dp"
+            android:layout_alignLeft="@+id/txtSubNama"
+            android:layout_below="@+id/txtSubNama"
+            android:text="Keluar" />
+
+        <TextView
+            android:id="@+id/txtSubNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtNama"
+            android:layout_alignLeft="@+id/txtNama"
+            android:text="Ganteng Banget"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

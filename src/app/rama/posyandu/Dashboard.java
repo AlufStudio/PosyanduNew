@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import app.rama.lib.DatabaseHandler;
@@ -20,6 +22,7 @@ public class Dashboard extends Activity {
 	private DatabaseHandler dh;
 	private TextView txNama,txtSubNama;
 	private SessionHandler sh;
+	private Button btnLogout;
 	private ImageButton btnTips,btnKalkulator,btnJadwal,btnAbout,btnBantuan,btnKMS;
 	private CircularImageView potoPropils;
 	private String[] blnIndonesia = {"Jan","Feb","Maret","April","Mei","Juni","Juli","Agustus","Sept","Okt","Nov","Des"};
@@ -28,6 +31,7 @@ public class Dashboard extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dashboard);
+		
 		dh = new DatabaseHandler(this);
 		
 		sh = new SessionHandler(getApplicationContext());
@@ -51,9 +55,13 @@ public class Dashboard extends Activity {
 		btnBantuan = (ImageButton)findViewById(R.id.btnBantuan);
 		btnKMS = (ImageButton)findViewById(R.id.btnKMS);
 		potoPropils = (CircularImageView)findViewById(R.id.potoPropils);
+		btnLogout = (Button)findViewById(R.id.btnLogout);
 		
 		
 		UserClass uc = dh.getUser(1);
+		Log.i("INFO", uc.getNama());
+		Log.i("INFO", uc.getNamaortu());
+		Log.i("INFO", uc.getGambar());
 		
 		potoPropils.setImageBitmap(decodeSampledBitmapFromPath(uc.getGambar(), 250, 250));
 		txNama.setText(uc.getNama());
@@ -118,6 +126,23 @@ public class Dashboard extends Activity {
 				// TODO Auto-generated method stub
 				Intent i = new Intent(Dashboard.this, KMS.class);
 				startActivity(i);
+			}
+		});
+		
+		btnLogout.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				//DELETE DATABASE
+				dh.resetDetailJadwal();
+				dh.resetDetailTips();
+				dh.resetDetailUser();
+				dh.resetDetailWOA();
+				
+				sh.logoutUser();
+				
 			}
 		});
 		

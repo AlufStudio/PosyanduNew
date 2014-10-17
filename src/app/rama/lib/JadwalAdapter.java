@@ -1,20 +1,16 @@
 package app.rama.lib;
 
 import java.util.List;
-
-import com.mikhaellopez.circularimageview.CircularImageView;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import app.rama.modal.JadwalClass;
-import app.rama.modal.TipsClass;
 import app.rama.posyandu.R;
 
 public class JadwalAdapter extends BaseAdapter {
@@ -45,7 +41,7 @@ public class JadwalAdapter extends BaseAdapter {
 		return position;
 	}
 
-	@Override
+	@SuppressLint({ "DefaultLocale", "InflateParams" }) @Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		if(inflater == null)

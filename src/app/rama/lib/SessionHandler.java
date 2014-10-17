@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import app.rama.posyandu.Daftar;
 import app.rama.posyandu.Dashboard;
  
 @SuppressLint("CommitPrefEdits") public class SessionHandler {
@@ -89,15 +90,15 @@ import app.rama.posyandu.Dashboard;
         return user;
     }
      
-    /**
-     Clear session details
+    
+     //Clear session details
     public void logoutUser(){
         // Clearing all data from Shared Preferences
         editor.clear();
         editor.commit();
          
         // After logout redirect user to Loing Activity
-        Intent i = new Intent(_context, LoginActivity.class);
+        Intent i = new Intent(_context, Daftar.class);
         // Closing all the Activities
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
          
@@ -107,7 +108,6 @@ import app.rama.posyandu.Dashboard;
         // Staring Login Activity
         _context.startActivity(i);
     }
-**/
      
     /**
      * Quick check for login

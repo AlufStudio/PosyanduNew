@@ -32,10 +32,10 @@ public class Air extends Activity {
 				InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 				inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 			if(BB.getText().toString().equals("")){
-				Toast.makeText(getBaseContext(),"Kosong",Toast.LENGTH_SHORT).show();
+				Toast.makeText(getBaseContext(),"Berat Badan Belum Diisi",Toast.LENGTH_SHORT).show();
 				AIR.setText("");
 			}else if (Umur.getText().toString().equals("")) {
-				Toast.makeText(getBaseContext(),"Kosong",Toast.LENGTH_SHORT).show();
+				Toast.makeText(getBaseContext(),"Umur Belum Diisi",Toast.LENGTH_SHORT).show();
 				AIR.setText("");
 			}
 			else{

@@ -68,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="Tips - tips agar tetap sehat" />
+                    android:text="Menghitung Kesehatan Ideal" />
 
             </LinearLayout>
             
@@ -91,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="Tips - tips agar tetap sehat" />
+                    android:text="Melihat Jadwal Imunisasi" />
 
             </LinearLayout>
             
@@ -114,7 +114,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="Tips - tips agar tetap sehat" />
+                    android:text="Menghitung Status Gizi Balita" />
 
             </LinearLayout>
             
@@ -137,7 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="Tips - tips agar tetap sehat" />
+                    android:text="Melihat Bantuan Aplikasi" />
 
             </LinearLayout>
             
@@ -160,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="Tips - tips agar tetap sehat" />
+                    android:text="Tentang Pembuat Aplikasi" />
 
             </LinearLayout>
             
