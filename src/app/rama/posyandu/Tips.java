@@ -4,41 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ActionBar;
-import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
-import android.view.Menu;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import app.rama.lib.ListAdapter;
 import app.rama.modal.TipsClass;
 
-public class Tips extends Activity {
+public class Tips extends Fragment {
     private ListView listView;
     private ListAdapter listAdapter;
     private List<TipsClass> tipsItems;
+    
+    
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_tips);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View rootView = inflater.inflate(R.layout.activity_tips, container,
+				false);
 		
-		listView = (ListView)findViewById(R.id.list);
+		listView = (ListView)rootView.findViewById(R.id.list);
 		tipsItems = new ArrayList<TipsClass>();
 		populatingData();
-		listAdapter = new ListAdapter(this, tipsItems);
+		listAdapter = new ListAdapter(getActivity(), tipsItems);
 		listView.setAdapter(listAdapter);
 		
 		
 		//mengautr navbar
-		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-		getActionBar().setCustomView(R.layout.actiobar_title);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.tips, menu);
-		return true;
+		getActivity().getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		getActivity().getActionBar().setCustomView(R.layout.actiobar_title);
+		
+		return rootView;
 	}
 
 	@Override

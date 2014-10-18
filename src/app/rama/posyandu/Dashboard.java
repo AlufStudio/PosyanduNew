@@ -45,17 +45,20 @@ public class Dashboard extends Activity {
             startActivity(i);
             finish();
 		}
-		
-		txNama = (TextView)findViewById(R.id.txtNama);
+
+		potoPropils = (CircularImageView)findViewById(R.id.potoPropils);
 		txtSubNama = (TextView)findViewById(R.id.txtSubNama);
+		txNama = (TextView)findViewById(R.id.txtNama);
+		btnLogout = (Button)findViewById(R.id.btnLogout);
+		
+		
 		btnTips = (ImageButton)findViewById(R.id.btnTips);
 		btnKalkulator = (ImageButton)findViewById(R.id.btnKalkulator);
 		btnJadwal = (ImageButton)findViewById(R.id.btnJadwal);
 		btnAbout = (ImageButton)findViewById(R.id.btnAbout);
 		btnBantuan = (ImageButton)findViewById(R.id.btnBantuan);
 		btnKMS = (ImageButton)findViewById(R.id.btnKMS);
-		potoPropils = (CircularImageView)findViewById(R.id.potoPropils);
-		btnLogout = (Button)findViewById(R.id.btnLogout);
+		
 		
 		
 		UserClass uc = dh.getUser(1);
@@ -73,7 +76,7 @@ public class Dashboard extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i = new Intent(Dashboard.this,Tips.class);
+				Intent i = new Intent(Dashboard.this,TipsClass.class);
 				startActivity(i);
 			}
 		});

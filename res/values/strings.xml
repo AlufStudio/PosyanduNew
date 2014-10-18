@@ -13,21 +13,24 @@
     <string name="title_activity_bbi">BBI</string>
     <string name="title_activity_tbi">TBI</string>
     <string name="title_activity_air">Air</string>
-    
+    <string name="title_ibu">Ibu</string>
+    <string name="title_umum">Umum</string>
+    <string name="title_anak">Anak</string>
+
     <!-- String untuk Title -->
     <string name="title_dashboard">MENU</string>
     <string name="title_sub_dashboard">Pelayanan, Tips, Info, Kegiatan yang ada di posyandu</string>
-    
+
     <!-- String untuk Hint -->
     <string name="hint_nama_anak">Nama Buah Hati</string>
     <string name="hint_nama_ortu">Nama Orang Tua</string>
     <string name="hint_tgl_lahir">Tanggal Lahir Anak</string>
-    
+
     <!-- String untuk Button -->
     <string name="btn_mulai">Mulai</string>
     <string name="btn_ganti_foto">Ganti Foto</string>
     <string name="btn_daftar">Daftar</string>
-    
+
     <!-- String untuk ImageView -->
     <string name="img_splash_logo">Splash Logo</string>
     <string name="img_splash_sublogo">Splash Sublogo</string>
@@ -42,7 +45,9 @@
     <string name="title_activity_about">About</string>
     <string name="title_activity_bantuan">Bantuan</string>
     <string name="title_activity_kms">KMS</string>
-	<string name="text_panjang">cm</string>
-	<string name="text_berat">kg</string>
-	<string name="text_umur">th</string>
+    <string name="text_panjang">cm</string>
+    <string name="text_berat">kg</string>
+    <string name="text_umur">th</string>
+    <string name="title_activity_tips_class">TipsClass</string>
+
 </resources>
